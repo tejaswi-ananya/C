@@ -26,6 +26,7 @@ int pop(){
     stack *temp;
     if(top == NULL){
         printf("Stack is empty.\n");
+        return 1;
     }
     else{
         
