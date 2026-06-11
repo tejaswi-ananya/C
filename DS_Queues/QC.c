@@ -47,7 +47,7 @@ void enqueue(int val)
 void traverse()
 {
 
-    if ((head == tail) == -1)
+    if(is_empty())
     {
         printf("Queue is empty\n");
         return;
@@ -79,15 +79,17 @@ int dequeue(){
     if(is_empty()){
         return TRUE;
     }
-    else if(head == tail)
+    temp = queue[head];
+    if(head == tail)
     {
         head = tail = -1;
     }
     else{
-        temp = queue[head];
+        
         head = (head + 1) % SIZE;
-        return temp;
+       
     }
+     return temp;
 }
 
 int main()
@@ -106,7 +108,12 @@ int main()
     
 
     dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    //dequeue();
 
-    enqueue(60);
+    //
     traverse();
 }
